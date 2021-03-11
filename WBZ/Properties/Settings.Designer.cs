@@ -98,82 +98,12 @@ namespace WBZ.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("12")]
-        public double config_iSize {
+        public double iSize {
             get {
-                return ((double)(this["config_iSize"]));
+                return ((double)(this["iSize"]));
             }
             set {
-                this["config_iSize"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("<?xml version=\"1.0\" encoding=\"utf-16\"?>\r\n<ArrayOfString xmlns:xsi=\"http://www.w3." +
-            "org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <s" +
-            "tring>975</string>\r\n  <string>650</string>\r\n</ArrayOfString>")]
-        public global::System.Collections.Specialized.StringCollection config_UsersList_WindowSize {
-            get {
-                return ((global::System.Collections.Specialized.StringCollection)(this["config_UsersList_WindowSize"]));
-            }
-            set {
-                this["config_UsersList_WindowSize"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("<?xml version=\"1.0\" encoding=\"utf-16\"?>\r\n<ArrayOfString xmlns:xsi=\"http://www.w3." +
-            "org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <s" +
-            "tring>900</string>\r\n  <string>600</string>\r\n</ArrayOfString>")]
-        public global::System.Collections.Specialized.StringCollection config_UsersNew_WindowSize {
-            get {
-                return ((global::System.Collections.Specialized.StringCollection)(this["config_UsersNew_WindowSize"]));
-            }
-            set {
-                this["config_UsersNew_WindowSize"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("<?xml version=\"1.0\" encoding=\"utf-16\"?>\r\n<ArrayOfString xmlns:xsi=\"http://www.w3." +
-            "org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <s" +
-            "tring>975</string>\r\n  <string>650</string>\r\n</ArrayOfString>")]
-        public global::System.Collections.Specialized.StringCollection config_AttributesClassesList_WindowSize {
-            get {
-                return ((global::System.Collections.Specialized.StringCollection)(this["config_AttributesClassesList_WindowSize"]));
-            }
-            set {
-                this["config_AttributesClassesList_WindowSize"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("<?xml version=\"1.0\" encoding=\"utf-16\"?>\r\n<ArrayOfString xmlns:xsi=\"http://www.w3." +
-            "org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <s" +
-            "tring>900</string>\r\n  <string>600</string>\r\n</ArrayOfString>")]
-        public global::System.Collections.Specialized.StringCollection config_AttributesClassesNew_WindowSize {
-            get {
-                return ((global::System.Collections.Specialized.StringCollection)(this["config_AttributesClassesNew_WindowSize"]));
-            }
-            set {
-                this["config_AttributesClassesNew_WindowSize"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("<?xml version=\"1.0\" encoding=\"utf-16\"?>\r\n<ArrayOfString xmlns:xsi=\"http://www.w3." +
-            "org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <s" +
-            "tring>975</string>\r\n  <string>650</string>\r\n</ArrayOfString>")]
-        public global::System.Collections.Specialized.StringCollection config_LogsList_WindowSize {
-            get {
-                return ((global::System.Collections.Specialized.StringCollection)(this["config_LogsList_WindowSize"]));
-            }
-            set {
-                this["config_LogsList_WindowSize"] = value;
+                this["iSize"] = value;
             }
         }
         
@@ -191,20 +121,6 @@ namespace WBZ.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("<?xml version=\"1.0\" encoding=\"utf-16\"?>\r\n<ArrayOfString xmlns:xsi=\"http://www.w3." +
-            "org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <s" +
-            "tring>900</string>\r\n  <string>600</string>\r\n</ArrayOfString>")]
-        public global::System.Collections.Specialized.StringCollection config_DocumentsNew_WindowSize {
-            get {
-                return ((global::System.Collections.Specialized.StringCollection)(this["config_DocumentsNew_WindowSize"]));
-            }
-            set {
-                this["config_DocumentsNew_WindowSize"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("#FF33AAEE")]
         public string config_Documents_PanelColor {
             get {
@@ -212,20 +128,6 @@ namespace WBZ.Properties {
             }
             set {
                 this["config_Documents_PanelColor"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("<?xml version=\"1.0\" encoding=\"utf-16\"?>\r\n<ArrayOfString xmlns:xsi=\"http://www.w3." +
-            "org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <s" +
-            "tring>975</string>\r\n  <string>650</string>\r\n</ArrayOfString>")]
-        public global::System.Collections.Specialized.StringCollection config_DocumentsList_WindowSize {
-            get {
-                return ((global::System.Collections.Specialized.StringCollection)(this["config_DocumentsList_WindowSize"]));
-            }
-            set {
-                this["config_DocumentsList_WindowSize"] = value;
             }
         }
         
@@ -327,34 +229,6 @@ namespace WBZ.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("<?xml version=\"1.0\" encoding=\"utf-16\"?>\r\n<ArrayOfString xmlns:xsi=\"http://www.w3." +
-            "org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <s" +
-            "tring>975</string>\r\n  <string>650</string>\r\n</ArrayOfString>")]
-        public global::System.Collections.Specialized.StringCollection config_StoresList_WindowSize {
-            get {
-                return ((global::System.Collections.Specialized.StringCollection)(this["config_StoresList_WindowSize"]));
-            }
-            set {
-                this["config_StoresList_WindowSize"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("<?xml version=\"1.0\" encoding=\"utf-16\"?>\r\n<ArrayOfString xmlns:xsi=\"http://www.w3." +
-            "org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <s" +
-            "tring>900</string>\r\n  <string>600</string>\r\n</ArrayOfString>")]
-        public global::System.Collections.Specialized.StringCollection config_StoresNew_WindowSize {
-            get {
-                return ((global::System.Collections.Specialized.StringCollection)(this["config_StoresNew_WindowSize"]));
-            }
-            set {
-                this["config_StoresNew_WindowSize"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool columns_StoresList_ID {
             get {
@@ -451,20 +325,6 @@ namespace WBZ.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("<?xml version=\"1.0\" encoding=\"utf-16\"?>\r\n<ArrayOfString xmlns:xsi=\"http://www.w3." +
-            "org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <s" +
-            "tring>900</string>\r\n  <string>600</string>\r\n</ArrayOfString>")]
-        public global::System.Collections.Specialized.StringCollection config_ArticlesNew_WindowSize {
-            get {
-                return ((global::System.Collections.Specialized.StringCollection)(this["config_ArticlesNew_WindowSize"]));
-            }
-            set {
-                this["config_ArticlesNew_WindowSize"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("#FF55DD55")]
         public string config_Articles_PanelColor {
             get {
@@ -472,20 +332,6 @@ namespace WBZ.Properties {
             }
             set {
                 this["config_Articles_PanelColor"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("<?xml version=\"1.0\" encoding=\"utf-16\"?>\r\n<ArrayOfString xmlns:xsi=\"http://www.w3." +
-            "org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <s" +
-            "tring>975</string>\r\n  <string>650</string>\r\n</ArrayOfString>")]
-        public global::System.Collections.Specialized.StringCollection config_ArticlesList_WindowSize {
-            get {
-                return ((global::System.Collections.Specialized.StringCollection)(this["config_ArticlesList_WindowSize"]));
-            }
-            set {
-                this["config_ArticlesList_WindowSize"] = value;
             }
         }
         
@@ -575,20 +421,6 @@ namespace WBZ.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("<?xml version=\"1.0\" encoding=\"utf-16\"?>\r\n<ArrayOfString xmlns:xsi=\"http://www.w3." +
-            "org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <s" +
-            "tring>900</string>\r\n  <string>600</string>\r\n</ArrayOfString>")]
-        public global::System.Collections.Specialized.StringCollection config_ContractorsNew_WindowSize {
-            get {
-                return ((global::System.Collections.Specialized.StringCollection)(this["config_ContractorsNew_WindowSize"]));
-            }
-            set {
-                this["config_ContractorsNew_WindowSize"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("#FFEEEE55")]
         public string config_Contractors_PanelColor {
             get {
@@ -601,34 +433,6 @@ namespace WBZ.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("<?xml version=\"1.0\" encoding=\"utf-16\"?>\r\n<ArrayOfString xmlns:xsi=\"http://www.w3." +
-            "org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <s" +
-            "tring>975</string>\r\n  <string>650</string>\r\n</ArrayOfString>")]
-        public global::System.Collections.Specialized.StringCollection config_ContractorsList_WindowSize {
-            get {
-                return ((global::System.Collections.Specialized.StringCollection)(this["config_ContractorsList_WindowSize"]));
-            }
-            set {
-                this["config_ContractorsList_WindowSize"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("<?xml version=\"1.0\" encoding=\"utf-16\"?>\r\n<ArrayOfString xmlns:xsi=\"http://www.w3." +
-            "org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <s" +
-            "tring>975</string>\r\n  <string>650</string>\r\n</ArrayOfString>")]
-        public global::System.Collections.Specialized.StringCollection config_FamiliesList_WindowSize {
-            get {
-                return ((global::System.Collections.Specialized.StringCollection)(this["config_FamiliesList_WindowSize"]));
-            }
-            set {
-                this["config_FamiliesList_WindowSize"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("#FFEEAA33")]
         public string config_Families_PanelColor {
             get {
@@ -636,48 +440,6 @@ namespace WBZ.Properties {
             }
             set {
                 this["config_Families_PanelColor"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("<?xml version=\"1.0\" encoding=\"utf-16\"?>\r\n<ArrayOfString xmlns:xsi=\"http://www.w3." +
-            "org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <s" +
-            "tring>900</string>\r\n  <string>600</string>\r\n</ArrayOfString>")]
-        public global::System.Collections.Specialized.StringCollection config_FamiliesNew_WindowSize {
-            get {
-                return ((global::System.Collections.Specialized.StringCollection)(this["config_FamiliesNew_WindowSize"]));
-            }
-            set {
-                this["config_FamiliesNew_WindowSize"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("<?xml version=\"1.0\" encoding=\"utf-16\"?>\r\n<ArrayOfString xmlns:xsi=\"http://www.w3." +
-            "org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <s" +
-            "tring>900</string>\r\n  <string>600</string>\r\n</ArrayOfString>")]
-        public global::System.Collections.Specialized.StringCollection config_DistributionsNew_WindowSize {
-            get {
-                return ((global::System.Collections.Specialized.StringCollection)(this["config_DistributionsNew_WindowSize"]));
-            }
-            set {
-                this["config_DistributionsNew_WindowSize"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("<?xml version=\"1.0\" encoding=\"utf-16\"?>\r\n<ArrayOfString xmlns:xsi=\"http://www.w3." +
-            "org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <s" +
-            "tring>900</string>\r\n  <string>600</string>\r\n</ArrayOfString>")]
-        public global::System.Collections.Specialized.StringCollection config_Stats_WindowSize {
-            get {
-                return ((global::System.Collections.Specialized.StringCollection)(this["config_Stats_WindowSize"]));
-            }
-            set {
-                this["config_Stats_WindowSize"] = value;
             }
         }
         
@@ -828,9 +590,9 @@ namespace WBZ.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("587")]
-        public string config_Email_Port {
+        public int config_Email_Port {
             get {
-                return ((string)(this["config_Email_Port"]));
+                return ((int)(this["config_Email_Port"]));
             }
             set {
                 this["config_Email_Port"] = value;
@@ -942,20 +704,6 @@ namespace WBZ.Properties {
             }
             set {
                 this["conn_password"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("<?xml version=\"1.0\" encoding=\"utf-16\"?>\r\n<ArrayOfString xmlns:xsi=\"http://www.w3." +
-            "org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <s" +
-            "tring>975</string>\r\n  <string>650</string>\r\n</ArrayOfString>")]
-        public global::System.Collections.Specialized.StringCollection config_DistributionsList_WindowSize {
-            get {
-                return ((global::System.Collections.Specialized.StringCollection)(this["config_DistributionsList_WindowSize"]));
-            }
-            set {
-                this["config_DistributionsList_WindowSize"] = value;
             }
         }
         
@@ -1213,20 +961,6 @@ namespace WBZ.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("<?xml version=\"1.0\" encoding=\"utf-16\"?>\r\n<ArrayOfString xmlns:xsi=\"http://www.w3." +
-            "org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <s" +
-            "tring>975</string>\r\n  <string>650</string>\r\n</ArrayOfString>")]
-        public global::System.Collections.Specialized.StringCollection config_EmployeesList_WindowSize {
-            get {
-                return ((global::System.Collections.Specialized.StringCollection)(this["config_EmployeesList_WindowSize"]));
-            }
-            set {
-                this["config_EmployeesList_WindowSize"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool columns_EmployeesList_ID {
             get {
@@ -1330,34 +1064,6 @@ namespace WBZ.Properties {
             }
             set {
                 this["columns_EmployeesList_Address"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("<?xml version=\"1.0\" encoding=\"utf-16\"?>\r\n<ArrayOfString xmlns:xsi=\"http://www.w3." +
-            "org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <s" +
-            "tring>900</string>\r\n  <string>600</string>\r\n</ArrayOfString>")]
-        public global::System.Collections.Specialized.StringCollection config_EmployeesNew_WindowSize {
-            get {
-                return ((global::System.Collections.Specialized.StringCollection)(this["config_EmployeesNew_WindowSize"]));
-            }
-            set {
-                this["config_EmployeesNew_WindowSize"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("<?xml version=\"1.0\" encoding=\"utf-16\"?>\r\n<ArrayOfString xmlns:xsi=\"http://www.w3." +
-            "org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <s" +
-            "tring>975</string>\r\n  <string>650</string>\r\n</ArrayOfString>")]
-        public global::System.Collections.Specialized.StringCollection config_GroupsList_WindowSize {
-            get {
-                return ((global::System.Collections.Specialized.StringCollection)(this["config_GroupsList_WindowSize"]));
-            }
-            set {
-                this["config_GroupsList_WindowSize"] = value;
             }
         }
         
@@ -1553,20 +1259,6 @@ namespace WBZ.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("<?xml version=\"1.0\" encoding=\"utf-16\"?>\r\n<ArrayOfString xmlns:xsi=\"http://www.w3." +
-            "org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <s" +
-            "tring>1050</string>\r\n  <string>700</string>\r\n</ArrayOfString>")]
-        public global::System.Collections.Specialized.StringCollection config_AttachmentsGallery_WindowSize {
-            get {
-                return ((global::System.Collections.Specialized.StringCollection)(this["config_AttachmentsGallery_WindowSize"]));
-            }
-            set {
-                this["config_AttachmentsGallery_WindowSize"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute(@"<?xml version=""1.0"" encoding=""utf-16""?>
 <ArrayOfString xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">
   <string>a.module</string>
@@ -1742,20 +1434,6 @@ namespace WBZ.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("<?xml version=\"1.0\" encoding=\"utf-16\"?>\r\n<ArrayOfString xmlns:xsi=\"http://www.w3." +
-            "org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <s" +
-            "tring>975</string>\r\n  <string>650</string>\r\n</ArrayOfString>")]
-        public global::System.Collections.Specialized.StringCollection config_AttachmentsList_WindowSize {
-            get {
-                return ((global::System.Collections.Specialized.StringCollection)(this["config_AttachmentsList_WindowSize"]));
-            }
-            set {
-                this["config_AttachmentsList_WindowSize"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute(@"<?xml version=""1.0"" encoding=""utf-16""?>
 <ArrayOfString xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">
   <string>a.module</string>
@@ -1836,12 +1514,12 @@ namespace WBZ.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("pl")]
-        public string language {
+        public string Language {
             get {
-                return ((string)(this["language"]));
+                return ((string)(this["Language"]));
             }
             set {
-                this["language"] = value;
+                this["Language"] = value;
             }
         }
         
@@ -1979,20 +1657,6 @@ namespace WBZ.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("\r\n          <ArrayOfString xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" " +
-            "xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n            <string>900</string>\r" +
-            "\n            <string>600</string>\r\n          </ArrayOfString>\r\n        ")]
-        public string config_ContractorsNew_WindowSize1 {
-            get {
-                return ((string)(this["config_ContractorsNew_WindowSize1"]));
-            }
-            set {
-                this["config_ContractorsNew_WindowSize1"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("#FFEEEE55")]
         public string config_Contractors_PanelColor1 {
             get {
@@ -2000,20 +1664,6 @@ namespace WBZ.Properties {
             }
             set {
                 this["config_Contractors_PanelColor1"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("\r\n          <ArrayOfString xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" " +
-            "xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n            <string>975</string>\r" +
-            "\n            <string>650</string>\r\n          </ArrayOfString>\r\n        ")]
-        public string config_ContractorsList_WindowSize1 {
-            get {
-                return ((string)(this["config_ContractorsList_WindowSize1"]));
-            }
-            set {
-                this["config_ContractorsList_WindowSize1"] = value;
             }
         }
         
@@ -2153,6 +1803,169 @@ namespace WBZ.Properties {
             }
             set {
                 this["columns_ContractorsList_Icon"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute(@"<?xml version=""1.0"" encoding=""utf-16""?>
+<ArrayOfString xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance"" xmlns:xsd=""http://www.w3.org/2001/XMLSchema"">
+  <string>v.register</string>
+  <string>False</string>
+  <string>v.brand</string>
+  <string>False</string>
+  <string>50</string>
+</ArrayOfString>")]
+        public global::System.Collections.Specialized.StringCollection sorting_VehiclesList {
+            get {
+                return ((global::System.Collections.Specialized.StringCollection)(this["sorting_VehiclesList"]));
+            }
+            set {
+                this["sorting_VehiclesList"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("#FF55DD55")]
+        public string config_Vehicles_PanelColor {
+            get {
+                return ((string)(this["config_Vehicles_PanelColor"]));
+            }
+            set {
+                this["config_Vehicles_PanelColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool columns_VehiclesList_ID {
+            get {
+                return ((bool)(this["columns_VehiclesList_ID"]));
+            }
+            set {
+                this["columns_VehiclesList_ID"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool columns_VehiclesList_Register {
+            get {
+                return ((bool)(this["columns_VehiclesList_Register"]));
+            }
+            set {
+                this["columns_VehiclesList_Register"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool columns_VehiclesList_Brand {
+            get {
+                return ((bool)(this["columns_VehiclesList_Brand"]));
+            }
+            set {
+                this["columns_VehiclesList_Brand"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool columns_VehiclesList_Model {
+            get {
+                return ((bool)(this["columns_VehiclesList_Model"]));
+            }
+            set {
+                this["columns_VehiclesList_Model"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool columns_VehiclesList_Capacity {
+            get {
+                return ((bool)(this["columns_VehiclesList_Capacity"]));
+            }
+            set {
+                this["columns_VehiclesList_Capacity"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool columns_VehiclesList_Forwarder {
+            get {
+                return ((bool)(this["columns_VehiclesList_Forwarder"]));
+            }
+            set {
+                this["columns_VehiclesList_Forwarder"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool columns_VehiclesList_Driver {
+            get {
+                return ((bool)(this["columns_VehiclesList_Driver"]));
+            }
+            set {
+                this["columns_VehiclesList_Driver"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool columns_VehiclesList_ProdYear {
+            get {
+                return ((bool)(this["columns_VehiclesList_ProdYear"]));
+            }
+            set {
+                this["columns_VehiclesList_ProdYear"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool columns_VehiclesList_Icon {
+            get {
+                return ((bool)(this["columns_VehiclesList_Icon"]));
+            }
+            set {
+                this["columns_VehiclesList_Icon"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool config_ShowButtonWithText {
+            get {
+                return ((bool)(this["config_ShowButtonWithText"]));
+            }
+            set {
+                this["config_ShowButtonWithText"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("#FF444444")]
+        public string ThemeColor {
+            get {
+                return ((string)(this["ThemeColor"]));
+            }
+            set {
+                this["ThemeColor"] = value;
             }
         }
     }

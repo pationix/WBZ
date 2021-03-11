@@ -1,10 +1,10 @@
-﻿using System;
+﻿using StswExpress.Globals;
+using System;
 using System.Data;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using WBZ.Globals;
 
 namespace WBZ.Modules._base
 {
@@ -108,7 +108,7 @@ namespace WBZ.Modules._base
 		/// </summary>
 		internal void cmdHelp_Executed(object sender, ExecutedRoutedEventArgs e)
 		{
-			Functions.OpenHelp(this);
+			Globals.Functions.OpenHelp(this);
 		}
 
 		/// <summary>
@@ -126,7 +126,7 @@ namespace WBZ.Modules._base
 		{
 			if (e.LeftButton == MouseButtonState.Pressed)
 			{
-				Commands.Type perm = Global.User.Perms.Contains($"{module}_{Global.UserPermType.SAVE}") ? Commands.Type.EDIT : Commands.Type.PREVIEW;
+				Commands.Type perm = Globals.Global.User.Perms.Contains($"{module}_{Globals.Global.UserPermType.SAVE}") ? Commands.Type.EDIT : Commands.Type.PREVIEW;
 
 				var selectedInstances = (sender as DataGrid).SelectedItems.Cast<T>();
 				foreach (T instance in selectedInstances)

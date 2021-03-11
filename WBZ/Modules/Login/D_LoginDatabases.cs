@@ -1,7 +1,7 @@
-﻿using System.Collections.ObjectModel;
+﻿using StswExpress.Models;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Reflection;
-using WBZ.Models;
 
 namespace WBZ.Modules.Login
 {
@@ -17,10 +17,7 @@ namespace WBZ.Modules.Login
 		private ObservableCollection<M_Database> databases = new ObservableCollection<M_Database>(M_Database.LoadAllDatabases());
 		public ObservableCollection<M_Database> Databases
 		{
-			get
-			{
-				return databases;
-			}
+			get => databases;
 			set
 			{
 				databases = value;

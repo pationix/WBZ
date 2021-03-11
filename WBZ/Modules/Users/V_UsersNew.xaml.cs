@@ -1,6 +1,6 @@
-﻿using System.Windows;
+﻿using StswExpress.Globals;
+using System.Windows;
 using System.Windows.Controls;
-using WBZ.Globals;
 using WBZ.Modules._base;
 using MODULE_MODEL = WBZ.Models.M_User;
 

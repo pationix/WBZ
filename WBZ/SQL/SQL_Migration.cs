@@ -1,7 +1,7 @@
 ﻿using Npgsql;
+using StswExpress.Globals;
 using System;
 using System.Windows;
-using WBZ.Globals;
 
 namespace WBZ
 {
@@ -17,10 +17,8 @@ namespace WBZ
 
 			try
 			{
-				using (var sqlConn = new NpgsqlConnection(SQL.connWBZ))
+				using (var sqlConn = SQL.connOpenedWBZ)
 				{
-					sqlConn.Open();
-
 					using (var sqlTran = sqlConn.BeginTransaction())
 					{
 						///1.0.0 => 1.0.1
@@ -160,7 +158,7 @@ CREATE TABLE wbz.attributes_values
 							update wbz.config set value='1.1.0' where property='VERSION'", sqlConn, sqlTran);
 							sqlCmd.ExecuteNonQuery();
 						}
-						///1.1.0 => 1.2.0
+						///1.1.0 => 1.2
 						if (SQL.GetPropertyValue("VERSION") == "1.1.0")
 						{
 							var sqlCmd = new NpgsqlCommand(@"
@@ -171,19 +169,42 @@ update wbz.users_permissions set perm='contractors_delete' where perm='companies
 alter table wbz.companies rename to contractors;
 alter table wbz.documents rename column company to contractor;
 
-							update wbz.config set value='1.2.0' where property='VERSION'", sqlConn, sqlTran);
+CREATE TABLE wbz.vehicles
+(
+    id serial NOT NULL,
+    register character varying(20) COLLATE pg_catalog.""default"" NOT NULL,
+	brand character varying(40) COLLATE pg_catalog.""default"",
+	model character varying(60) COLLATE pg_catalog.""default"",
+	capacity decimal(18, 3),
+	forwarder integer,
+	driver integer,
+	prodyear integer,
+	archival boolean NOT NULL DEFAULT false,
+	comment text COLLATE pg_catalog.""default"",
+	icon bytea,
+	CONSTRAINT vehicles_pkey PRIMARY KEY(id),
+	CONSTRAINT vehicles_register_key UNIQUE (register),
+	CONSTRAINT vehicles_headers_forwarder_fkey FOREIGN KEY(forwarder)
+		REFERENCES wbz.contractors(id) MATCH SIMPLE
+		ON UPDATE CASCADE
+		ON DELETE NO ACTION,
+	CONSTRAINT vehicles_headers_driver_fkey FOREIGN KEY(driver)
+		REFERENCES wbz.employees(id) MATCH SIMPLE
+		ON UPDATE CASCADE
+		ON DELETE NO ACTION
+) TABLESPACE pg_default;
+
+							update wbz.config set value='1.2' where property='VERSION'", sqlConn, sqlTran);
 							sqlCmd.ExecuteNonQuery();
 						}
 
 						sqlTran.Commit();
 					}
-
-					sqlConn.Close();
 				}
 
 				result = true;
 
-				Global.Database.Version = SQL.GetPropertyValue("VERSION");
+				Global.AppDatabase.Version = SQL.GetPropertyValue("VERSION");
 			}
 			catch (Exception ex)
 			{

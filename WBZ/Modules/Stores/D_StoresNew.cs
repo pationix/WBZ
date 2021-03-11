@@ -7,7 +7,7 @@ using MODULE_MODEL = WBZ.Models.M_Store;
 
 namespace WBZ.Modules.Stores
 {
-    class D_StoresNew : D_ModuleNew<MODULE_MODEL>
+    class D_TransportNew : D_ModuleNew<MODULE_MODEL>
 	{
 		/// Module
 		public readonly string MODULE_TYPE = Global.Module.STORES;
@@ -17,11 +17,11 @@ namespace WBZ.Modules.Stores
 		{
 			get
 			{
-				if (Mode == Commands.Type.NEW)
+				if (Mode == StswExpress.Globals.Commands.Type.NEW)
 					return "Nowy magazyn";
-				else if (Mode == Commands.Type.DUPLICATE)
+				else if (Mode == StswExpress.Globals.Commands.Type.DUPLICATE)
 					return $"Duplikowanie magazynu: {InstanceInfo.Name}";
-				else if (Mode == Commands.Type.EDIT)
+				else if (Mode == StswExpress.Globals.Commands.Type.EDIT)
 					return $"Edycja magazynu: {InstanceInfo.Name}";
 				else
 					return $"Podgląd magazynu: {InstanceInfo.Name}";

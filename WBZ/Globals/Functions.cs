@@ -1,9 +1,8 @@
-﻿using System;
+﻿using StswExpress.Globals;
+using System;
 using System.Diagnostics;
-using System.IO;
 using System.Linq;
 using System.Windows;
-using System.Windows.Media.Imaging;
 using WBZ.Controls;
 using WBZ.Models;
 using WBZ.Modules.Articles;
@@ -15,6 +14,7 @@ using WBZ.Modules.Employees;
 using WBZ.Modules.Families;
 using WBZ.Modules.Stores;
 using WBZ.Modules.Users;
+using WBZ.Modules.Vehicles;
 
 namespace WBZ.Globals
 {
@@ -96,6 +96,10 @@ namespace WBZ.Globals
 				case Global.Module.USERS:
 					window = new UsersNew(SQL.GetInstance<M_User>(obj.Module, obj.Instance), mode);
 					break;
+				/// VEHICLES
+				case Global.Module.VEHICLES:
+					window = new VehiclesNew(SQL.GetInstance<M_Vehicle>(obj.Module, obj.Instance), mode);
+					break;
 				default:
 					return;
 			}
@@ -108,12 +112,15 @@ namespace WBZ.Globals
 		/// </summary>
 		internal static void OpenHelp(Window owner)
         {
-			//TODO - przerobienie poradnika na okno pomocy w wersji 1.2.0
+			//TODO - przerobienie poradnika na okno pomocy w wersji 1.2.0 (?)
+			//TODO - odpalenie poradnika z dowolnego miejsca w aplikacji (App.xaml)
             try
             {
                 var process = new Process();
                 string path = AppDomain.CurrentDomain.BaseDirectory + @"/Resources/pl_manual.pdf";
                 process.StartInfo.FileName = new Uri(path, UriKind.RelativeOrAbsolute).LocalPath;
+				process.StartInfo.UseShellExecute = true;
+				process.StartInfo.Verb = "open";
                 process.Start();
             }
             catch (Exception ex)
@@ -121,28 +128,5 @@ namespace WBZ.Globals
                 new MsgWin(MsgWin.Type.MsgOnly, MsgWin.MsgTitle.ERROR, "Błąd otwierania poradnika: " + ex.Message) { Owner = owner }.ShowDialog();
             }
         }
-
-		/// <summary>
-		/// Load image from byte[] to BitmapImage
-		/// </summary>
-		/// <param name="imageData"></param>
-		/// <returns></returns>
-		internal static BitmapImage LoadImage(byte[] imageData)
-		{
-			if (imageData == null || imageData.Length == 0) return null;
-			var image = new BitmapImage();
-			using (var mem = new MemoryStream(imageData))
-			{
-				mem.Position = 0;
-				image.BeginInit();
-				image.CreateOptions = BitmapCreateOptions.PreservePixelFormat;
-				image.CacheOption = BitmapCacheOption.OnLoad;
-				image.UriSource = null;
-				image.StreamSource = mem;
-				image.EndInit();
-			}
-			image.Freeze();
-			return image;
-		}
 	}
 }

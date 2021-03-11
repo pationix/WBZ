@@ -1,7 +1,7 @@
-﻿using System;
+﻿using StswExpress.Globals;
+using System;
 using System.Data;
 using System.Windows;
-using WBZ.Globals;
 using WBZ.Modules._base;
 using WBZ.Modules.Articles;
 using WBZ.Modules.Contractors;
@@ -57,7 +57,7 @@ namespace WBZ.Modules.Documents
 		/// </summary>
 		private void btnSelectContractor_Click(object sender, RoutedEventArgs e)
 		{
-			var window = new ContractorsList(Commands.Type.SELECTING);
+			var window = new ContractorsList(Commands.Type.SELECT);
 			if (window.ShowDialog() == true)
 				if (window.Selected != null)
 				{
@@ -72,7 +72,7 @@ namespace WBZ.Modules.Documents
 		/// </summary>
 		private void btnSelectStore_Click(object sender, RoutedEventArgs e)
 		{
-			var window = new StoresList(Commands.Type.SELECTING);
+			var window = new StoresList(Commands.Type.SELECT);
 			if (window.ShowDialog() == true)
 				if (window.Selected != null)
 				{
@@ -87,7 +87,7 @@ namespace WBZ.Modules.Documents
 		/// </summary>
 		private void btnPositionsAdd_Click(object sender, RoutedEventArgs e)
 		{
-			var window = new ArticlesList(Commands.Type.SELECTING);
+			var window = new ArticlesList(Commands.Type.SELECT);
 			if (window.ShowDialog() == true)
 				if (window.Selected != null)
 				{

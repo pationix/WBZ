@@ -1,4 +1,6 @@
 ﻿using Newtonsoft.Json.Linq;
+using StswExpress.Globals;
+using StswExpress.Models;
 using System;
 using System.Collections.ObjectModel;
 using System.Windows;
@@ -6,7 +8,6 @@ using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 using System.Net.Http;
 using WBZ.Controls;
-using WBZ.Globals;
 using WBZ.Models;
 using Props = WBZ.Properties.Settings;
 
@@ -38,7 +39,7 @@ namespace WBZ.Modules.Login
 		private void Window_Loaded(object sender, RoutedEventArgs e)
 		{
 			CheckNewestVersion();
-			txtVersion.Content = Global.Version;
+			txtVersion.Content = Global.AppVersion();
 
 			D.Databases = new ObservableCollection<M_Database>(M_Database.LoadAllDatabases());
 
@@ -59,11 +60,11 @@ namespace WBZ.Modules.Login
 				{
 					string result = await content.ReadAsStringAsync();
 					dynamic data = JObject.Parse(result);
-					Global.VersionNewest = (string)data.versions[0];
+					Globals.Global.VersionNewest = (string)data.versions[0];
 				}
 
 				/// check app version
-				if (Global.Version == Global.VersionNewest)
+				if (Global.AppVersion() == Globals.Global.VersionNewest)
 				{
 					imgVersion.Source = new BitmapImage(new Uri("pack://siteoforigin:,,,/Resources/icon32_circlegreen.ico"));
 					imgVersion.ToolTip = "Posiadasz aktualną wersję programu.";
@@ -71,7 +72,7 @@ namespace WBZ.Modules.Login
 				else
 				{
 					imgVersion.Source = new BitmapImage(new Uri("pack://siteoforigin:,,,/Resources/icon32_circleorange.ico"));
-					imgVersion.ToolTip = "Posiadasz nieaktualną wersję programu. Najnowsza wersja to " + Global.VersionNewest;
+					imgVersion.ToolTip = "Posiadasz nieaktualną wersję programu. Najnowsza wersja: " + Globals.Global.VersionNewest;
 				}
 			}
 			catch { }
@@ -82,9 +83,7 @@ namespace WBZ.Modules.Login
 		/// </summary>
 		private void btnDatabases_Click(object sender, RoutedEventArgs e)
 		{
-			var window = new LoginDatabases();
-			window.Owner = this;
-			if (window.ShowDialog() == true)
+			if (new LoginDatabases() { Owner = this }.ShowDialog() == true)
 				Window_Loaded(null, null);
 		}
 
@@ -108,9 +107,9 @@ namespace WBZ.Modules.Login
 			{
 				try
 				{
-					Global.Database = cbDatabase.SelectedItem as M_Database;
-					SQL.connWBZ = SQL.MakeConnString(Global.Database.Server, Global.Database.Port, Global.Database.Database, Global.Database.Username, Global.Database.Password);
-					Global.Database.Version = SQL.GetPropertyValue("VERSION");
+					var db = Global.AppDatabase = cbDatabase.SelectedItem as M_Database;
+					SQL.connWBZ = StswExpress.Globals.SQL.MakeConnString(db.Server, db.Port, db.Database, db.Username, db.Password);
+					Global.AppDatabase.Version = SQL.GetPropertyValue("VERSION");
 
 					btnLogin.IsEnabled = true;
 					btnOther.IsEnabled = true;
@@ -127,18 +126,17 @@ namespace WBZ.Modules.Login
 		/// </summary>
 		private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-			if (Global.Database.Version != Global.Version)
+			if (Global.AppDatabase.Version != Global.AppVersion())
 			{
-				new MsgWin(MsgWin.Type.MsgOnly, MsgWin.MsgTitle.WARNING, $"Wersja aplikacji {Global.Version} nie zgadza się z wersją bazy danych {Global.Database.Version}!" +
+				new MsgWin(MsgWin.Type.MsgOnly, MsgWin.MsgTitle.WARNING, $"Wersja aplikacji {Global.AppVersion()} nie zgadza się z wersją bazy danych {Global.AppDatabase.Version}!" +
 					Environment.NewLine + "Zaktualizuj bazę z menu dodatkowych opcji lub skontaktuj się z administratorem.") { Owner = this }.ShowDialog();
 				return;
 			}
 
-			if (SQL.Login(tbLogin.Text, Global.sha256(tbPassword.Password)))
+			if (SQL.Login(tbLogin.Text, Globals.Global.sha256(tbPassword.Password)))
 			{
 				M_Config.LoadConfig();
-				var window = new Main();
-				window.Show();
+				new Main().Show();
 				Close();
 			}
 
@@ -159,7 +157,7 @@ namespace WBZ.Modules.Login
 		private void btnOther_Click(object sender, RoutedEventArgs e)
 		{
 			///conditions of button "Dodaj administratora"
-			if (SQL.CountInstances(Global.Module.USERS, @"u.blocked=false and u.archival=false and exists(select from wbz.users_permissions where ""user""=u.id and perm='admin')") == 0)
+			if (SQL.CountInstances(Globals.Global.Module.USERS, @"u.blocked=false and u.archival=false and exists(select from wbz.users_permissions where ""user""=u.id and perm='admin')") == 0)
 			{
 				btnCreateAdmin.Visibility = Visibility.Visible;
 				btnCreateAdmin.IsEnabled = true;
@@ -171,11 +169,11 @@ namespace WBZ.Modules.Login
 			}
 
 			///conditions of button "Aktualizuj bazę danych"
-			if (Global.Database.Version != Global.Version)
+			if (Global.AppDatabase.Version != Global.AppVersion())
 			{
 				btnUpdateDatabase.Visibility = Visibility.Visible;
 				btnUpdateDatabase.IsEnabled = true;
-				btnUpdateDatabase.Header = $"Aktualizuj bazę danych ({Global.Database.Version} → {Global.Version})";
+				btnUpdateDatabase.Header = $"Aktualizuj bazę danych ({Global.AppDatabase.Version} → {Global.AppVersion()})";
 			}
 			else
 			{
@@ -194,9 +192,7 @@ namespace WBZ.Modules.Login
 		/// </summary>
 		private void btnCreateAdmin_Click(object sender, RoutedEventArgs e)
 		{
-			var window = new LoginRegister();
-			window.Owner = this;
-			window.ShowDialog();
+			new LoginRegister() { Owner = this }.ShowDialog();
 		}
 
 		/// <summary>
@@ -208,7 +204,7 @@ namespace WBZ.Modules.Login
 			conf.Owner = this;
 			if (conf.ShowDialog() == true)
 			{
-				var users = SQL.ListInstances<M_User>(Global.Module.USERS, $"(lower(username)='{conf.GetLogin.ToLower()}' or lower(email)='{conf.GetLogin.ToLower()}') and password='{Global.sha256(conf.GetPassword)}'");
+				var users = SQL.ListInstances<Models.M_User>(Globals.Global.Module.USERS, $"(lower(username)='{conf.GetLogin.ToLower()}' or lower(email)='{conf.GetLogin.ToLower()}') and password='{Globals.Global.sha256(conf.GetPassword)}'");
 				if (users.Count == 0 || !SQL.GetUserPerms(users[0].ID).Contains("admin"))
 				{
 					new MsgWin(MsgWin.Type.MsgOnly, MsgWin.MsgTitle.ERROR, "Brak uprawnień administracyjnych lub błędne dane użytkownika!") { Owner = this }.ShowDialog();
@@ -227,15 +223,27 @@ namespace WBZ.Modules.Login
 		/// </summary>
 		private void btnGenerateNewpass_Click(object sender, RoutedEventArgs e)
 		{
-			//TODO - nowy sposób generowania hasła z wysłaniem kodu na maila
 			var window = new MsgWin(MsgWin.Type.InputBox, "Generowanie nowego hasła", "Podaj e-mail konta, którego hasło chcesz odzyskać:");
 			window.Owner = this;
 			if (window.ShowDialog() == true)
 			{
-				var loginData = SQL.GenerateNewPasswordForAccount(window.Value);
+				var rnd = new Random().Next(100_000, 1_000_000);
 				if (Mail.SendMail(Props.Default.config_Email_Email, new string[] { window.Value },
-						"WBZ - generowanie nowego hasła", $"Nazwa użytkownika: {loginData[0]}{Environment.NewLine}Hasło: {loginData[1]}"))
-					new MsgWin(MsgWin.Type.MsgOnly, MsgWin.MsgTitle.INFO, "Wiadomość z nazwą użytkownika i hasłem wysłano na podany e-mail.") { Owner = this }.ShowDialog();
+						"WBZ - generowanie nowego hasła", $"Kod do zmiany hasła:{rnd}"))
+					if (new MsgWin(MsgWin.Type.MsgOnly, MsgWin.MsgTitle.INFO, "Wiadomość z kodem do zmiany hasła wysłano na podany e-mail.") { Owner = this }.ShowDialog() == true)
+					{
+						var cwin = new MsgWin(MsgWin.Type.InputBox, "Kod zmiany hasła", "Podaj kod otrzymany w wiadomości e-mail:");
+						cwin.Owner = this;
+						if (cwin.ShowDialog() == true)
+                        {
+							if (cwin.Value == rnd.ToString())
+							{
+								new LoginChangePassword(window.Value) { Owner = this }.ShowDialog();
+							}
+							else
+								new MsgWin(MsgWin.Type.MsgOnly, MsgWin.MsgTitle.INFO, "Niepoprawny kod! Spróbuj wygenerować kod na nowo.") { Owner = this }.ShowDialog();
+						}
+					}
 			}
 		}
 
@@ -244,7 +252,7 @@ namespace WBZ.Modules.Login
 		/// </summary>
 		private void btnManual_Click(object sender, RoutedEventArgs e)
 		{
-			Functions.OpenHelp(this);
+			Globals.Functions.OpenHelp(this);
 		}
 
 		/// <summary>
@@ -252,9 +260,7 @@ namespace WBZ.Modules.Login
 		/// </summary>
 		private void btnVersions_Click(object sender, RoutedEventArgs e)
 		{
-			var window = new Versions();
-			window.Owner = this;
-			window.ShowDialog();
+			new Versions() { Owner = this }.ShowDialog();
 		}
 
 		/// <summary>
@@ -262,9 +268,11 @@ namespace WBZ.Modules.Login
 		/// </summary>
 		private void btnSettings_Click(object sender, RoutedEventArgs e)
 		{
-			var window = new Settings();
-			window.Owner = this;
-			window.ShowDialog();
+			if (new Settings() { Owner = this }.ShowDialog() == true)
+            {
+				new Login().Show();
+				Close();
+			}
 		}
 
 		/// <summary>
@@ -272,9 +280,7 @@ namespace WBZ.Modules.Login
 		/// </summary>
 		private void btnAboutApp_Click(object sender, RoutedEventArgs e)
 		{
-			var window = new LoginAppAbout();
-			window.Owner = this;
-			window.ShowDialog();
+			new LoginAppAbout() { Owner = this }.ShowDialog();
 		}
 	}
 }
